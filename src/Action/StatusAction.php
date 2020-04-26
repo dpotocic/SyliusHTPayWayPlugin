@@ -41,7 +41,7 @@ class StatusAction implements ActionInterface, ApiAwareInterface
         $statusCode = (int)$model['tcompayway_response']['pgw_result_code'];
 
         if (0 === $statusCode && 0 === (int)$this->api->getPgwAuthorizationType()) {
-            $request->markCaptured();
+            $request->markAuthorized();
 
             return;
         }
